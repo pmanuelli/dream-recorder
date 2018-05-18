@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecordDreamView" customModule="DreamRecorder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3L-8c-cUh" userLabel="Record Button Container" customClass="GradientView" customModule="DreamRecorder" customModuleProvider="target">
+                    <rect key="frame" x="112.5" y="268.5" width="150" height="150"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-JQ-F3e">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                            <state key="normal" title="Start"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="p0O-JQ-F3e" firstAttribute="leading" secondItem="Z3L-8c-cUh" secondAttribute="leading" id="Ezd-7n-nLx"/>
+                        <constraint firstAttribute="bottom" secondItem="p0O-JQ-F3e" secondAttribute="bottom" id="NjC-Hq-HiI"/>
+                        <constraint firstAttribute="trailing" secondItem="p0O-JQ-F3e" secondAttribute="trailing" id="Rs2-Z0-hrF"/>
+                        <constraint firstItem="p0O-JQ-F3e" firstAttribute="top" secondItem="Z3L-8c-cUh" secondAttribute="top" id="U3d-01-teR"/>
+                        <constraint firstAttribute="width" constant="150" id="hAR-AH-SPG"/>
+                        <constraint firstAttribute="width" secondItem="Z3L-8c-cUh" secondAttribute="height" multiplier="1:1" id="yZu-mJ-4Tg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.18823529411764706" green="0.20000000000000001" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" red="0.77254901960784317" green="0.61176470588235299" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                            <point key="value" x="0.0" y="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="75"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyX-XY-vyh" userLabel="Save Record Button Container" customClass="GradientView" customModule="DreamRecorder" customModuleProvider="target">
+                    <rect key="frame" x="87" y="587" width="200" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leC-lX-QVT">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                            <state key="normal" title="Save"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="leC-lX-QVT" firstAttribute="top" secondItem="YyX-XY-vyh" secondAttribute="top" id="N3P-4z-KJg"/>
+                        <constraint firstAttribute="bottom" secondItem="leC-lX-QVT" secondAttribute="bottom" id="O8Z-l6-b6f"/>
+                        <constraint firstAttribute="trailing" secondItem="leC-lX-QVT" secondAttribute="trailing" id="biL-o9-pmv"/>
+                        <constraint firstAttribute="height" constant="50" id="gwg-01-Wa9"/>
+                        <constraint firstItem="leC-lX-QVT" firstAttribute="leading" secondItem="YyX-XY-vyh" secondAttribute="leading" id="jfi-jq-z0U"/>
+                        <constraint firstAttribute="width" constant="200" id="zNd-k3-sGx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.18823529410000001" green="0.20000000000000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" red="0.7725490196" green="0.61176470589999998" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                            <point key="value" x="0.0" y="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Z3L-8c-cUh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="6o0-Oo-jvm"/>
+                <constraint firstItem="YyX-XY-vyh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="NfF-m6-A5g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YyX-XY-vyh" secondAttribute="bottom" constant="30" id="rVJ-Pp-MQf"/>
+                <constraint firstItem="Z3L-8c-cUh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="u1Q-SX-kEU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="recordButton" destination="p0O-JQ-F3e" id="4n7-5l-Ien"/>
+                <outlet property="recordButtonContainer" destination="Z3L-8c-cUh" id="eFA-wU-btn"/>
+                <outlet property="saveRecordButton" destination="leC-lX-QVT" id="StV-gS-Oyf"/>
+                <outlet property="saveRecordButtonContainer" destination="YyX-XY-vyh" id="7Se-CN-ItB"/>
+            </connections>
+            <point key="canvasLocation" x="71.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
