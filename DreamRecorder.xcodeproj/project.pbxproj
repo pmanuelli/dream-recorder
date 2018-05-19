@@ -90,20 +90,6 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		6EFFE4E520AE40F20052191A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6EFFE4E620AE40FA0052191A /* Infraestructure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Infraestructure;
-			sourceTree = "<group>";
-		};
 		6EFFE4E720AE41A40052191A /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +99,7 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		6EFFE4F120AE6C420052191A /* UIKit */ = {
+		6EFFE4F120AE6C420052191A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				E986D4E020A67C4400D7FBEB /* RecordDreamCoordinator.swift */,
@@ -122,7 +108,7 @@
 				E986D4E220A67C4400D7FBEB /* RecordDreamView.xib */,
 				6E42E4E920AD0F23002B9650 /* Animators */,
 			);
-			path = UIKit;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		E986D4C020A67BED00D7FBEB = {
@@ -158,21 +144,19 @@
 			isa = PBXGroup;
 			children = (
 				6EFFE4E720AE41A40052191A /* Actions */,
-				6EFFE4E520AE40F20052191A /* Model */,
-				6EFFE4E620AE40FA0052191A /* Infraestructure */,
-				E986D4DF20A67C4400D7FBEB /* Presentation */,
-				6EFFE4F120AE6C420052191A /* UIKit */,
+				E986D4DF20A67C4400D7FBEB /* Presentation Model */,
+				6EFFE4F120AE6C420052191A /* Presentation */,
 			);
 			path = RecordDream;
 			sourceTree = "<group>";
 		};
-		E986D4DF20A67C4400D7FBEB /* Presentation */ = {
+		E986D4DF20A67C4400D7FBEB /* Presentation Model */ = {
 			isa = PBXGroup;
 			children = (
 				6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */,
 				6EFFE4EE20AE6C000052191A /* RecordDreamViewModelDelegate.swift */,
 			);
-			path = Presentation;
+			path = "Presentation Model";
 			sourceTree = "<group>";
 		};
 		E986D4E820A67C7300D7FBEB /* Common */ = {
