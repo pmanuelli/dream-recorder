@@ -28,9 +28,9 @@ class RecordDreamViewController: UIViewController {
     
     private func bindViewModel() {
         
-        viewModel.saveRecordButtonEnabled
+        viewModel.continueButtonEnabled
             .asObservable()
-            .subscribe(onNext: saveRecordButtonEnabledChanged)
+            .subscribe(onNext: continueButtonEnabledChanged)
             .disposed(by: disposeBag)
     }
     
@@ -47,7 +47,7 @@ class RecordDreamViewController: UIViewController {
         viewModel.recordButtonTouched()
     }
     
-    private func saveRecordButtonEnabledChanged(_ isEnabled: Bool) {
-        mainView.changeSaveRecordButtonVisibility(isEnabled)
+    private func continueButtonEnabledChanged(_ isEnabled: Bool) {
+        mainView.changeContinueButtonVisibility(isEnabled)
     }
 }

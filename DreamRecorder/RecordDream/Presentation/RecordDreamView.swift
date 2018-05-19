@@ -6,8 +6,8 @@ class RecordDreamView: UIView {
     @IBOutlet var recordButtonContainer: GradientView!
     @IBOutlet var recordButton: UIButton!
     
-    @IBOutlet var saveRecordButtonContainer: GradientView!
-    @IBOutlet var saveRecordButton: UIButton!
+    @IBOutlet var continueButtonContainer: GradientView!
+    @IBOutlet var continueButton: UIButton!
     
     var touchAnimator: TouchUpInsideAnimator!
     
@@ -20,7 +20,7 @@ class RecordDreamView: UIView {
         touchAnimator.animate(completion: nil)
     }
     
-    func changeSaveRecordButtonVisibility(_ isVisible: Bool) {
-        saveRecordButtonContainer.isHidden = !isVisible
+    func changeContinueButtonVisibility(_ isVisible: Bool) {
+        continueButtonContainer.isHidden = !isVisible
     }
 }

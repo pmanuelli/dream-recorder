@@ -6,37 +6,37 @@ import RxSwift
 
 class RecordDreamViewModelTest: XCTestCase {
     
-    func testWhenViewModelIsCreatedThenSaveRecordButtonIsDisabled() {
+    func testWhenViewModelIsCreatedThenContinueButtonIsDisabled() {
         
         let viewModel = RecordDreamViewModel()
         
-        assertSaveRecordButtonIsDisabled(viewModel)
+        assertContinueButtonIsDisabled(viewModel)
     }
     
-    func testWhenRecordButtonIsTouchedOnceThenSaveRecordButtonIsDisabled() {
-        
-        let viewModel = RecordDreamViewModel()
-        
-        viewModel.recordButtonTouched()
-        
-        assertSaveRecordButtonIsDisabled(viewModel)
-    }
-    
-    func testWhenRecordButtonIsTouchedTwiceThenSaveRecordButtonIsEnabled() {
+    func testWhenRecordButtonIsTouchedOnceThenContinueButtonIsDisabled() {
         
         let viewModel = RecordDreamViewModel()
         
         viewModel.recordButtonTouched()
+        
+        assertContinueButtonIsDisabled(viewModel)
+    }
+    
+    func testWhenRecordButtonIsTouchedTwiceThenContinueButtonIsEnabled() {
+        
+        let viewModel = RecordDreamViewModel()
+        
+        viewModel.recordButtonTouched()
         viewModel.recordButtonTouched()
         
-        assertSaveRecordButtonIsEnabled(viewModel)
+        assertContinueButtonIsEnabled(viewModel)
     }
     
-    private func assertSaveRecordButtonIsEnabled(_ viewModel: RecordDreamViewModel) {
-        XCTAssertTrue(viewModel.saveRecordButtonEnabled.value)
+    private func assertContinueButtonIsEnabled(_ viewModel: RecordDreamViewModel) {
+        XCTAssertTrue(viewModel.continueButtonEnabled.value)
     }
     
-    private func assertSaveRecordButtonIsDisabled(_ viewModel: RecordDreamViewModel) {
-        XCTAssertFalse(viewModel.saveRecordButtonEnabled.value)
+    private func assertContinueButtonIsDisabled(_ viewModel: RecordDreamViewModel) {
+        XCTAssertFalse(viewModel.continueButtonEnabled.value)
     }
 }
