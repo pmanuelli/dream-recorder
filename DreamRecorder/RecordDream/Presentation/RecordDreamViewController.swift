@@ -28,10 +28,17 @@ class RecordDreamViewController: UIViewController {
     
     private func bindViewModel() {
         
+        viewModel.recordButtonTitle
+            .asObservable()
+            .subscribe(onNext: recordButtonTitleChanged)
+            .disposed(by: disposeBag)
+        
         viewModel.continueButtonEnabled
             .asObservable()
             .subscribe(onNext: continueButtonEnabledChanged)
             .disposed(by: disposeBag)
+        
+        mainView.continueButton.setTitle(viewModel.continueButtonTitle) 
     }
     
     private func addButtonTargets() {
@@ -45,6 +52,10 @@ class RecordDreamViewController: UIViewController {
         mainView.animateRecordButtonTouch()
         
         viewModel.recordButtonTouched()
+    }
+    
+    private func recordButtonTitleChanged(_ title: String) {
+        mainView.recordButton.setTitle(title)
     }
     
     private func continueButtonEnabledChanged(_ isEnabled: Bool) {

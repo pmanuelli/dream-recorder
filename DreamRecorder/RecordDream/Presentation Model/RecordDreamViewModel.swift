@@ -3,7 +3,7 @@ import RxSwift
 
 class RecordDreamViewModel {
 
-    let recordButtonTitle = Variable<String>("Tap to Record")
+    let recordButtonTitle = Variable<String>("Record")
     
     let continueButtonEnabled = Variable<Bool>(false)
     let continueButtonTitle = "Continue"
@@ -26,6 +26,7 @@ class RecordDreamViewModel {
     private func startRecording() {
         isRecording = true
         continueButtonEnabled.value = false
+        recordButtonTitle.value = "Stop"
         
         startRecordingAction.execute()
     }
@@ -33,6 +34,7 @@ class RecordDreamViewModel {
     private func stopRecording() {
         isRecording = false
         continueButtonEnabled.value = true
+        recordButtonTitle.value = "New Record"
         
         stopRecordingAction.execute()
     }
