@@ -19,7 +19,13 @@ class RecordDreamCoordinator: Coordinator {
 
     func start() {
         
-        controller = RecordDreamViewController(nibName: .none, bundle: .none)
+        let startRecording = StartRecording()
+        let stopRecording = StopRecording()
+        
+        let viewModel = RecordDreamViewModel(startRecordingAction: startRecording,
+                                             stopRecordingAction: stopRecording)
+        
+        controller = RecordDreamViewController(viewModel: viewModel)
         controller.delegate = self
         
         navigationController.pushViewController(controller, animated: true)

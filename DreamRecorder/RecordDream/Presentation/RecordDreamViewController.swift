@@ -11,9 +11,19 @@ class RecordDreamViewController: UIViewController {
     weak var delegate: RecordDreamViewControllerDelegate?
     
     lazy var mainView = RecordDreamView.loadNib()
-    let viewModel = RecordDreamViewModel()
+    let viewModel: RecordDreamViewModel
     
     let disposeBag = DisposeBag()
+    
+    init(viewModel: RecordDreamViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: .none, bundle: .none)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = mainView

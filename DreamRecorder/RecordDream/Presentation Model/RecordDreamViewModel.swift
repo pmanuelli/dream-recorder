@@ -8,11 +8,15 @@ class RecordDreamViewModel {
     let continueButtonEnabled = Variable<Bool>(false)
     let continueButtonTitle = "Continue"
     
-    private var startRecordingAction = StartRecording()
-    private var stopRecordingAction = StopRecording()
+    private var startRecordingAction: StartRecording
+    private var stopRecordingAction: StopRecording
     
     private var isRecording = false
     
+    init(startRecordingAction: StartRecording, stopRecordingAction: StopRecording) {
+        self.startRecordingAction = startRecordingAction
+        self.stopRecordingAction = stopRecordingAction
+    }
     func recordButtonTouched() {
         
         if isRecording {
