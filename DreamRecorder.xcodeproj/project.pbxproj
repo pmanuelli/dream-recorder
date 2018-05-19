@@ -29,10 +29,24 @@
 		E986D4F220A67C8900D7FBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4F120A67C8900D7FBEB /* AppDelegate.swift */; };
 		E986D4F420A683B500D7FBEB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4F320A683B500D7FBEB /* GradientView.swift */; };
 		E9960FE7EDC8EE178BA61A2A /* Pods_DreamRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */; };
+		E9A0996220B0936C00D39F99 /* DreamRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A0996120B0936C00D39F99 /* DreamRecorderTests.swift */; };
+		E9A0996D20B0944B00D39F99 /* RecordDreamViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A0996C20B0944B00D39F99 /* RecordDreamViewModelTest.swift */; };
 		E9A3859320A77C43001F2446 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3859220A77C43001F2446 /* DesignableView.swift */; };
+		EBC38E22FFB78BDAA6A58717 /* Pods_DreamRecorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A6E0B8C412D4117648880B /* Pods_DreamRecorderTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E9A0996420B0936C00D39F99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E986D4C120A67BED00D7FBEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E986D4C820A67BEE00D7FBEB;
+			remoteInfo = DreamRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0CCB9D8610DBA505AB6C3F98 /* Pods-DreamRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E42E4E820AD0CFD002B9650 /* BlaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlaView.xib; sourceTree = "<group>"; };
 		6E42E4EF20AD1FF7002B9650 /* UIView+TransformAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TransformAnimation.swift"; sourceTree = "<group>"; };
 		6E42E4F220AD2123002B9650 /* CGAffineTransform+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Extensions.swift"; sourceTree = "<group>"; };
@@ -45,6 +59,7 @@
 		6EFFE4EC20AE541B0052191A /* StopRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopRecording.swift; sourceTree = "<group>"; };
 		6EFFE4F220AE7E420052191A /* TouchUpInsideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchUpInsideAnimator.swift; sourceTree = "<group>"; };
 		92EE84E5C1F6D5C84B935439 /* Pods-DreamRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		B7A6E0B8C412D4117648880B /* Pods_DreamRecorderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamRecorderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C625499C76E8F55859E3E /* Pods-DreamRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		E986D4C920A67BEE00D7FBEB /* DreamRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +75,12 @@
 		E986D4ED20A67C7300D7FBEB /* UIView+LoadableFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadableFromNib.swift"; sourceTree = "<group>"; };
 		E986D4F120A67C8900D7FBEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E986D4F320A683B500D7FBEB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E9A0995F20B0936B00D39F99 /* DreamRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A0996120B0936C00D39F99 /* DreamRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamRecorderTests.swift; sourceTree = "<group>"; };
+		E9A0996320B0936C00D39F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A0996C20B0944B00D39F99 /* RecordDreamViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDreamViewModelTest.swift; sourceTree = "<group>"; };
 		E9A3859220A77C43001F2446 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		F6E1E92D239F30F4B7EA8692 /* Pods-DreamRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +92,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9A0995C20B0936B00D39F99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC38E22FFB78BDAA6A58717 /* Pods_DreamRecorderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */,
+				B7A6E0B8C412D4117648880B /* Pods_DreamRecorderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +156,8 @@
 			children = (
 				92EE84E5C1F6D5C84B935439 /* Pods-DreamRecorder.debug.xcconfig */,
 				DE9C625499C76E8F55859E3E /* Pods-DreamRecorder.release.xcconfig */,
+				0CCB9D8610DBA505AB6C3F98 /* Pods-DreamRecorderTests.debug.xcconfig */,
+				F6E1E92D239F30F4B7EA8692 /* Pods-DreamRecorderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -135,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E986D4CB20A67BEE00D7FBEB /* DreamRecorder */,
+				E9A0996020B0936C00D39F99 /* DreamRecorderTests */,
 				E986D4CA20A67BEE00D7FBEB /* Products */,
 				AEE43419A84C9F4C982BAA45 /* Pods */,
 				33B390F4D5B19F2194497E1C /* Frameworks */,
@@ -145,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				E986D4C920A67BEE00D7FBEB /* DreamRecorder.app */,
+				E9A0995F20B0936B00D39F99 /* DreamRecorderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +246,32 @@
 			path = "View Extensions";
 			sourceTree = "<group>";
 		};
+		E9A0996020B0936C00D39F99 /* DreamRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0996A20B093CD00D39F99 /* RecordDream */,
+				E9A0996120B0936C00D39F99 /* DreamRecorderTests.swift */,
+				E9A0996320B0936C00D39F99 /* Info.plist */,
+			);
+			path = DreamRecorderTests;
+			sourceTree = "<group>";
+		};
+		E9A0996A20B093CD00D39F99 /* RecordDream */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0996B20B093D400D39F99 /* Presentation Model */,
+			);
+			path = RecordDream;
+			sourceTree = "<group>";
+		};
+		E9A0996B20B093D400D39F99 /* Presentation Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0996C20B0944B00D39F99 /* RecordDreamViewModelTest.swift */,
+			);
+			path = "Presentation Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +295,27 @@
 			productReference = E986D4C920A67BEE00D7FBEB /* DreamRecorder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E9A0995E20B0936B00D39F99 /* DreamRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9A0996820B0936C00D39F99 /* Build configuration list for PBXNativeTarget "DreamRecorderTests" */;
+			buildPhases = (
+				76C133D1BA4BFA3AD5151124 /* [CP] Check Pods Manifest.lock */,
+				E9A0995B20B0936B00D39F99 /* Sources */,
+				E9A0995C20B0936B00D39F99 /* Frameworks */,
+				E9A0995D20B0936B00D39F99 /* Resources */,
+				C900C42CCB9348A18896005A /* [CP] Embed Pods Frameworks */,
+				726CA8FDF5DEB785E6B3ACEE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9A0996520B0936C00D39F99 /* PBXTargetDependency */,
+			);
+			name = DreamRecorderTests;
+			productName = DreamRecorderTests;
+			productReference = E9A0995F20B0936B00D39F99 /* DreamRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -249,6 +329,11 @@
 					E986D4C820A67BEE00D7FBEB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					E9A0995E20B0936B00D39F99 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E986D4C820A67BEE00D7FBEB;
 					};
 				};
 			};
@@ -266,6 +351,7 @@
 			projectRoot = "";
 			targets = (
 				E986D4C820A67BEE00D7FBEB /* DreamRecorder */,
+				E9A0995E20B0936B00D39F99 /* DreamRecorderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +364,13 @@
 				E986D4D720A67BEE00D7FBEB /* LaunchScreen.storyboard in Resources */,
 				E986D4D420A67BEE00D7FBEB /* Assets.xcassets in Resources */,
 				E986D4E620A67C4400D7FBEB /* RecordDreamView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9A0995D20B0936B00D39F99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +410,39 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		726CA8FDF5DEB785E6B3ACEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76C133D1BA4BFA3AD5151124 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DreamRecorderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8C85BC776800673EA5C44C75 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +459,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C900C42CCB9348A18896005A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -364,7 +508,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9A0995B20B0936B00D39F99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9A0996220B0936C00D39F99 /* DreamRecorderTests.swift in Sources */,
+				E9A0996D20B0944B00D39F99 /* RecordDreamViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9A0996520B0936C00D39F99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E986D4C820A67BEE00D7FBEB /* DreamRecorder */;
+			targetProxy = E9A0996420B0936C00D39F99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E986D4D520A67BEE00D7FBEB /* LaunchScreen.storyboard */ = {
@@ -523,6 +684,40 @@
 			};
 			name = Release;
 		};
+		E9A0996620B0936C00D39F99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CCB9D8610DBA505AB6C3F98 /* Pods-DreamRecorderTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UW4KT7U5SP;
+				INFOPLIST_FILE = DreamRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pmanuelli.DreamRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamRecorder.app/DreamRecorder";
+			};
+			name = Debug;
+		};
+		E9A0996720B0936C00D39F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6E1E92D239F30F4B7EA8692 /* Pods-DreamRecorderTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UW4KT7U5SP;
+				INFOPLIST_FILE = DreamRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pmanuelli.DreamRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamRecorder.app/DreamRecorder";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,6 +735,15 @@
 			buildConfigurations = (
 				E986D4DC20A67BEE00D7FBEB /* Debug */,
 				E986D4DD20A67BEE00D7FBEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9A0996820B0936C00D39F99 /* Build configuration list for PBXNativeTarget "DreamRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9A0996620B0936C00D39F99 /* Debug */,
+				E9A0996720B0936C00D39F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
