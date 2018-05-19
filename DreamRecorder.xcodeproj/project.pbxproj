@@ -16,7 +16,6 @@
 		6EC324BD20ABD3A200780B8B /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC324BC20ABD3A200780B8B /* GradientButton.swift */; };
 		6EFFE4E920AE41CE0052191A /* StartRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE4E820AE41CE0052191A /* StartRecording.swift */; };
 		6EFFE4ED20AE541B0052191A /* StopRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE4EC20AE541B0052191A /* StopRecording.swift */; };
-		6EFFE4EF20AE6C000052191A /* RecordDreamViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE4EE20AE6C000052191A /* RecordDreamViewModelDelegate.swift */; };
 		6EFFE4F320AE7E420052191A /* TouchUpInsideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE4F220AE7E420052191A /* TouchUpInsideAnimator.swift */; };
 		E986D4D420A67BEE00D7FBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E986D4D320A67BEE00D7FBEB /* Assets.xcassets */; };
 		E986D4D720A67BEE00D7FBEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E986D4D520A67BEE00D7FBEB /* LaunchScreen.storyboard */; };
@@ -29,6 +28,7 @@
 		E986D4F020A67C7300D7FBEB /* UIView+LoadableFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4ED20A67C7300D7FBEB /* UIView+LoadableFromNib.swift */; };
 		E986D4F220A67C8900D7FBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4F120A67C8900D7FBEB /* AppDelegate.swift */; };
 		E986D4F420A683B500D7FBEB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4F320A683B500D7FBEB /* GradientView.swift */; };
+		E9960FE7EDC8EE178BA61A2A /* Pods_DreamRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */; };
 		E9A3859320A77C43001F2446 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3859220A77C43001F2446 /* DesignableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +43,10 @@
 		6EC324BC20ABD3A200780B8B /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		6EFFE4E820AE41CE0052191A /* StartRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecording.swift; sourceTree = "<group>"; };
 		6EFFE4EC20AE541B0052191A /* StopRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopRecording.swift; sourceTree = "<group>"; };
-		6EFFE4EE20AE6C000052191A /* RecordDreamViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDreamViewModelDelegate.swift; sourceTree = "<group>"; };
 		6EFFE4F220AE7E420052191A /* TouchUpInsideAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchUpInsideAnimator.swift; sourceTree = "<group>"; };
+		92EE84E5C1F6D5C84B935439 /* Pods-DreamRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9C625499C76E8F55859E3E /* Pods-DreamRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		E986D4C920A67BEE00D7FBEB /* DreamRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E986D4D320A67BEE00D7FBEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E986D4D620A67BEE00D7FBEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,12 +68,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9960FE7EDC8EE178BA61A2A /* Pods_DreamRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33B390F4D5B19F2194497E1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C742AB26CC22F0DC0C060 /* Pods_DreamRecorder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E42E4E920AD0F23002B9650 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +122,22 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		AEE43419A84C9F4C982BAA45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92EE84E5C1F6D5C84B935439 /* Pods-DreamRecorder.debug.xcconfig */,
+				DE9C625499C76E8F55859E3E /* Pods-DreamRecorder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E986D4C020A67BED00D7FBEB = {
 			isa = PBXGroup;
 			children = (
 				E986D4CB20A67BEE00D7FBEB /* DreamRecorder */,
 				E986D4CA20A67BEE00D7FBEB /* Products */,
+				AEE43419A84C9F4C982BAA45 /* Pods */,
+				33B390F4D5B19F2194497E1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */,
-				6EFFE4EE20AE6C000052191A /* RecordDreamViewModelDelegate.swift */,
 			);
 			path = "Presentation Model";
 			sourceTree = "<group>";
@@ -199,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E986D4DB20A67BEE00D7FBEB /* Build configuration list for PBXNativeTarget "DreamRecorder" */;
 			buildPhases = (
+				5443FCFAAA03FC019838E862 /* [CP] Check Pods Manifest.lock */,
 				E986D4C520A67BEE00D7FBEB /* Sources */,
 				E986D4C620A67BEE00D7FBEB /* Frameworks */,
 				E986D4C720A67BEE00D7FBEB /* Resources */,
+				8C85BC776800673EA5C44C75 /* [CP] Embed Pods Frameworks */,
+				14AB49B376E94685C1F3F5AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +283,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14AB49B376E94685C1F3F5AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5443FCFAAA03FC019838E862 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DreamRecorder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C85BC776800673EA5C44C75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DreamRecorder/Pods-DreamRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E986D4C520A67BEE00D7FBEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,7 +359,6 @@
 				6EC324BB20ABD27F00780B8B /* UIView+CornerRadius.swift in Sources */,
 				6EC324BD20ABD3A200780B8B /* GradientButton.swift in Sources */,
 				E986D4E520A67C4400D7FBEB /* RecordDreamView.swift in Sources */,
-				6EFFE4EF20AE6C000052191A /* RecordDreamViewModelDelegate.swift in Sources */,
 				6EC324B720ABC9E300780B8B /* UIView+Extensions.swift in Sources */,
 				6EFFE4F320AE7E420052191A /* TouchUpInsideAnimator.swift in Sources */,
 			);
@@ -414,11 +491,13 @@
 		};
 		E986D4DC20A67BEE00D7FBEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92EE84E5C1F6D5C84B935439 /* Pods-DreamRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A876NJFJCE;
 				INFOPLIST_FILE = DreamRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pmanuelli.DreamRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,11 +508,13 @@
 		};
 		E986D4DD20A67BEE00D7FBEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE9C625499C76E8F55859E3E /* Pods-DreamRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A876NJFJCE;
 				INFOPLIST_FILE = DreamRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pmanuelli.DreamRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

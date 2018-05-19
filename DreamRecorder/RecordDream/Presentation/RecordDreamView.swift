@@ -15,16 +15,12 @@ class RecordDreamView: UIView {
         super.awakeFromNib()
     }
     
-    func recordButtonTouchedUpInside() {
+    func animateRecordButtonTouch() {
         touchAnimator = TouchUpInsideAnimator(view: recordButtonContainer)
         touchAnimator.animate(completion: nil)
     }
     
-    func showSaveRecordButton() {
-        saveRecordButtonContainer.isHidden = false
-    }
-    
-    func hideSaveRecordButton() {
-        saveRecordButtonContainer.isHidden = true
+    func changeSaveRecordButtonVisibility(_ isVisible: Bool) {
+        saveRecordButtonContainer.isHidden = !isVisible
     }
 }

@@ -1,5 +1,6 @@
 
 import UIKit
+import RxSwift
 
 protocol RecordDreamViewControllerDelegate: class {
     
@@ -11,7 +12,9 @@ class RecordDreamViewController: UIViewController {
     
     lazy var mainView = RecordDreamView.loadNib()
     let viewModel = RecordDreamViewModel()
-        
+    
+    let disposeBag = DisposeBag()
+    
     override func loadView() {
         view = mainView
     }
@@ -24,35 +27,27 @@ class RecordDreamViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.delegate = self
+        
+        viewModel.saveRecordButtonEnabled
+            .asObservable()
+            .subscribe(onNext: saveRecordButtonEnabledChanged)
+            .disposed(by: disposeBag)
     }
     
     private func addButtonTargets() {
-        mainView.recordButton.addTarget(self, action: #selector(recordButtonTouched), for: .touchUpInside)
+        
+        mainView.recordButton
+            .addTarget(self, action: #selector(recordButtonTouched), for: .touchUpInside)
     }
     
     @objc
     private func recordButtonTouched() {
-        mainView.recordButtonTouchedUpInside()
+        mainView.animateRecordButtonTouch()
+        
         viewModel.recordButtonTouched()
     }
-}
-
-extension RecordDreamViewController: RecordDreamViewModelDelegate {
-
-    func recordStarted() {
-
-    }
     
-    func recordStopped() {
-
-    }
-    
-    func showSaveRecordButton() {
-        mainView.showSaveRecordButton()
-    }
-    
-    func hideSaveRecordButton() {
-        mainView.hideSaveRecordButton()
+    private func saveRecordButtonEnabledChanged(_ isEnabled: Bool) {
+        mainView.changeSaveRecordButtonVisibility(isEnabled)
     }
 }

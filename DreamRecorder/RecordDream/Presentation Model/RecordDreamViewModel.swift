@@ -1,12 +1,14 @@
 
+import RxSwift
+
 class RecordDreamViewModel {
 
-    weak var delegate: RecordDreamViewModelDelegate?
-    
-    private var isRecording = false
+    let saveRecordButtonEnabled = Variable<Bool>(false)
     
     private var startRecordingAction = StartRecording()
     private var stopRecordingAction = StopRecording()
+    
+    private var isRecording = false
     
     func recordButtonTouched() {
         
@@ -20,17 +22,15 @@ class RecordDreamViewModel {
     
     private func startRecording() {
         isRecording = true
-        startRecordingAction.execute()
+        saveRecordButtonEnabled.value = false
         
-        delegate?.recordStarted()
-        delegate?.hideSaveRecordButton()
+        startRecordingAction.execute()
     }
     
     private func stopRecording() {
         isRecording = false
-        stopRecordingAction.execute()
+        saveRecordButtonEnabled.value = true
         
-        delegate?.recordStopped()
-        delegate?.showSaveRecordButton()
+        stopRecordingAction.execute()
     }
 }
