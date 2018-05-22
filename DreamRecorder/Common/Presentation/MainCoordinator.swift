@@ -1,38 +1,24 @@
 
 import UIKit
+import RxSwift
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: BaseCoordinator<Void> {
     
-    private var childCoordinators = [Coordinator]()
     private var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
-        pushRecordDream()
+    override func start() -> Observable<Void> {
+        
+        _ = startRecordDreamCoordinator()
+        
+        return Observable.never()
     }
     
-    private func pushRecordDream() {
-        
+    private func startRecordDreamCoordinator() -> Observable<Void> {
         let coordinator = RecordDreamCoordinator(navigationController: navigationController)
-        coordinator.delegate = self
-        coordinator.start()
-        
-        childCoordinators.append(coordinator)
+        return coordinate(to: coordinator)
     }
-    
-    private func removeCoordinator(_ coordinator: Coordinator) {
-        
-        guard let index = childCoordinators.index(where: { $0 === coordinator } )else {
-            return
-        }
-        
-        childCoordinators.remove(at: index)
-    }
-}
-
-extension MainCoordinator: RecordDreamCoordinatorDelegate {
-    
 }

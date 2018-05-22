@@ -23,7 +23,7 @@
 		E986D4E520A67C4400D7FBEB /* RecordDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4E120A67C4400D7FBEB /* RecordDreamView.swift */; };
 		E986D4E620A67C4400D7FBEB /* RecordDreamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E986D4E220A67C4400D7FBEB /* RecordDreamView.xib */; };
 		E986D4E720A67C4400D7FBEB /* RecordDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4E320A67C4400D7FBEB /* RecordDreamViewController.swift */; };
-		E986D4EE20A67C7300D7FBEB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4EA20A67C7300D7FBEB /* Coordinator.swift */; };
+		E986D4EE20A67C7300D7FBEB /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4EA20A67C7300D7FBEB /* BaseCoordinator.swift */; };
 		E986D4EF20A67C7300D7FBEB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4EB20A67C7300D7FBEB /* MainCoordinator.swift */; };
 		E986D4F020A67C7300D7FBEB /* UIView+LoadableFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4ED20A67C7300D7FBEB /* UIView+LoadableFromNib.swift */; };
 		E986D4F220A67C8900D7FBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986D4F120A67C8900D7FBEB /* AppDelegate.swift */; };
@@ -71,7 +71,7 @@
 		E986D4E120A67C4400D7FBEB /* RecordDreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDreamView.swift; sourceTree = "<group>"; };
 		E986D4E220A67C4400D7FBEB /* RecordDreamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDreamView.xib; sourceTree = "<group>"; };
 		E986D4E320A67C4400D7FBEB /* RecordDreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDreamViewController.swift; sourceTree = "<group>"; };
-		E986D4EA20A67C7300D7FBEB /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E986D4EA20A67C7300D7FBEB /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E986D4EB20A67C7300D7FBEB /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E986D4ED20A67C7300D7FBEB /* UIView+LoadableFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadableFromNib.swift"; sourceTree = "<group>"; };
 		E986D4F120A67C8900D7FBEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6E42E4E820AD0CFD002B9650 /* BlaView.xib */,
-				E986D4EA20A67C7300D7FBEB /* Coordinator.swift */,
+				E986D4EA20A67C7300D7FBEB /* BaseCoordinator.swift */,
 				E986D4EB20A67C7300D7FBEB /* MainCoordinator.swift */,
 				6EC324B320ABC8BD00780B8B /* Custom Views */,
 				E986D4EC20A67C7300D7FBEB /* View Extensions */,
@@ -491,7 +491,7 @@
 			files = (
 				E986D4F020A67C7300D7FBEB /* UIView+LoadableFromNib.swift in Sources */,
 				6E42E4F320AD2123002B9650 /* CGAffineTransform+Extensions.swift in Sources */,
-				E986D4EE20A67C7300D7FBEB /* Coordinator.swift in Sources */,
+				E986D4EE20A67C7300D7FBEB /* BaseCoordinator.swift in Sources */,
 				E986D4E420A67C4400D7FBEB /* RecordDreamCoordinator.swift in Sources */,
 				6EFFE4ED20AE541B0052191A /* StopRecording.swift in Sources */,
 				E986D4E720A67C4400D7FBEB /* RecordDreamViewController.swift in Sources */,

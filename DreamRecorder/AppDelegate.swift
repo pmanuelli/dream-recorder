@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupCoordinator() {
         mainCoordinator = MainCoordinator(navigationController: mainNavigationController)
-        mainCoordinator.start()
+        _ = mainCoordinator.start()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

@@ -2,13 +2,7 @@
 import UIKit
 import RxSwift
 
-protocol RecordDreamViewControllerDelegate: class {
-    
-}
-
 class RecordDreamViewController: UIViewController {
-
-    weak var delegate: RecordDreamViewControllerDelegate?
     
     lazy var mainView = RecordDreamView.loadNib()
     let viewModel: RecordDreamViewModel

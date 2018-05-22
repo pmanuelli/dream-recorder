@@ -1,37 +1,35 @@
 
 import UIKit
+import RxSwift
 
-protocol RecordDreamCoordinatorDelegate: class {
-    
-}
-
-class RecordDreamCoordinator: Coordinator {
-    
-    weak var delegate: RecordDreamCoordinatorDelegate?
+class RecordDreamCoordinator: BaseCoordinator<Void> {
     
     private let navigationController: UINavigationController
-    
-    private var controller: RecordDreamViewController!
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    func start() {
+    override func start() -> Observable<Void> {
+    
+        let viewModel = createViewModel()
+        let controller = createViewController(viewModel: viewModel)
+        
+        navigationController.pushViewController(controller, animated: true)
+        
+        return Observable.never()
+    }
+    
+    private func createViewModel() -> RecordDreamViewModel {
         
         let startRecording = StartRecording()
         let stopRecording = StopRecording()
         
-        let viewModel = RecordDreamViewModel(startRecordingAction: startRecording,
-                                             stopRecordingAction: stopRecording)
-        
-        controller = RecordDreamViewController(viewModel: viewModel)
-        controller.delegate = self
-        
-        navigationController.pushViewController(controller, animated: true)
+        return RecordDreamViewModel(startRecordingAction: startRecording,
+                                    stopRecordingAction: stopRecording)
     }
-}
-
-extension RecordDreamCoordinator: RecordDreamViewControllerDelegate {
     
+    private func createViewController(viewModel: RecordDreamViewModel) -> UIViewController {
+        return RecordDreamViewController(viewModel: viewModel)
+    }
 }
