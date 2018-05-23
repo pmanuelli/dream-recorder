@@ -39,7 +39,7 @@ class RecordDreamViewController: UIViewController {
         
         viewModel.continueButtonEnabled
             .asObservable()
-            .subscribe(onNext: { [weak self] isEnabled in self?.continueButtonEnabledChanged(isEnabled) })
+            .subscribe(onNext: { [weak self] isEnabled in self?.mainView.changeContinueButtonVisibility(isEnabled) })
             .disposed(by: disposeBag)
         
         mainView.recordButton.rx.tap
@@ -48,9 +48,5 @@ class RecordDreamViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.continueButton.setTitle(viewModel.continueButtonTitle)
-    }
-        
-    private func continueButtonEnabledChanged(_ isEnabled: Bool) {
-        mainView.changeContinueButtonVisibility(isEnabled)
     }
 }
