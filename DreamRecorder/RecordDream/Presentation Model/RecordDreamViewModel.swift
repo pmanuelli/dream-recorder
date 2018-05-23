@@ -8,18 +8,37 @@ class RecordDreamViewModel {
     let continueButtonEnabled = Variable<Bool>(false)
     let continueButtonTitle = "Continue"
 
+    let recordButtonTouch: AnyObserver<Void>
+    private let recordButtonTouched: Observable<Void>
+    
     private var startRecordingAction: StartRecording
     private var stopRecordingAction: StopRecording
 
     private var isRecording = false
+    
+    private let disposeBag = DisposeBag()
 
     init(startRecordingAction: StartRecording, stopRecordingAction: StopRecording) {
+        
         self.startRecordingAction = startRecordingAction
         self.stopRecordingAction = stopRecordingAction
+        
+        let recordButtonTouchSubject = PublishSubject<Void>()
+        self.recordButtonTouch = recordButtonTouchSubject.asObserver()
+        self.recordButtonTouched = recordButtonTouchSubject.asObservable()
+        
+        observeRecordButtonTouched()
     }
     
-    func recordButtonTouched() {
+    func observeRecordButtonTouched() {
         
+        recordButtonTouched
+            .subscribe(onNext: { [weak self] in self?.recordButtonWasTouched() })
+            .disposed(by: disposeBag)
+    }
+    
+    private func recordButtonWasTouched() {
+
         if isRecording {
             stopRecording()
         }

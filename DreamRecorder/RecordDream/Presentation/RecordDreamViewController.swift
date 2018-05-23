@@ -1,6 +1,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class RecordDreamViewController: UIViewController {
     
@@ -27,41 +28,28 @@ class RecordDreamViewController: UIViewController {
         super.viewDidLoad()
         
         bindViewModel()
-        addButtonTargets()
     }
     
     private func bindViewModel() {
         
         viewModel.recordButtonTitle
             .asObservable()
-            .subscribe(onNext: recordButtonTitleChanged)
+            .bind(to: mainView.recordButton.rx.title())
             .disposed(by: disposeBag)
         
         viewModel.continueButtonEnabled
             .asObservable()
-            .subscribe(onNext: continueButtonEnabledChanged)
+            .subscribe(onNext: { [weak self] isEnabled in self?.continueButtonEnabledChanged(isEnabled) })
             .disposed(by: disposeBag)
         
-        mainView.continueButton.setTitle(viewModel.continueButtonTitle) 
-    }
-    
-    private func addButtonTargets() {
+        mainView.recordButton.rx.tap
+            .do(onNext: { [weak self] _ in self?.mainView.animateRecordButtonTouch() })
+            .bind(to: viewModel.recordButtonTouch)
+            .disposed(by: disposeBag)
         
-        mainView.recordButton
-            .addTarget(self, action: #selector(recordButtonTouched), for: .touchUpInside)
+        mainView.continueButton.setTitle(viewModel.continueButtonTitle)
     }
-    
-    @objc
-    private func recordButtonTouched() {
-        mainView.animateRecordButtonTouch()
         
-        viewModel.recordButtonTouched()
-    }
-    
-    private func recordButtonTitleChanged(_ title: String) {
-        mainView.recordButton.setTitle(title)
-    }
-    
     private func continueButtonEnabledChanged(_ isEnabled: Bool) {
         mainView.changeContinueButtonVisibility(isEnabled)
     }
