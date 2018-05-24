@@ -17,7 +17,7 @@ class RecordDreamViewModelTest: XCTestCase {
         
         let viewModel = givenAViewModel()
         
-        viewModel.recordButtonTouched()
+        whenRecordButtonIsTouched(viewModel: viewModel)
         
         assertContinueButtonIsDisabled(viewModel)
     }
@@ -26,8 +26,8 @@ class RecordDreamViewModelTest: XCTestCase {
         
         let viewModel = givenAViewModel()
         
-        viewModel.recordButtonTouched()
-        viewModel.recordButtonTouched()
+        whenRecordButtonIsTouched(viewModel: viewModel)
+        whenRecordButtonIsTouched(viewModel: viewModel)
         
         assertContinueButtonIsEnabled(viewModel)
     }
@@ -35,6 +35,10 @@ class RecordDreamViewModelTest: XCTestCase {
     private func givenAViewModel() -> RecordDreamViewModel {
         return RecordDreamViewModel(startRecordingAction: StartRecording(),
                                     stopRecordingAction: StopRecording())
+    }
+    
+    private func whenRecordButtonIsTouched(viewModel: RecordDreamViewModel) {
+        viewModel.recordButtonTouch.onNext(())
     }
     
     private func assertContinueButtonIsEnabled(_ viewModel: RecordDreamViewModel) {

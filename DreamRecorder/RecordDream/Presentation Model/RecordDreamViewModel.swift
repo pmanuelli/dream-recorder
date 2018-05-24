@@ -30,7 +30,7 @@ class RecordDreamViewModel {
         observeRecordButtonTouched()
     }
     
-    func observeRecordButtonTouched() {
+    private func observeRecordButtonTouched() {
         
         recordButtonTouched
             .subscribe(onNext: { [weak self] in self?.recordButtonWasTouched() })
