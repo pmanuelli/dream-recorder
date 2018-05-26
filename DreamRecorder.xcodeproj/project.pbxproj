@@ -114,6 +114,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E3C2DEB20BA29660079A38D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6E3C2DEC20BA29A80079A38D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6E3C2DEB20BA29660079A38D /* Services */,
+				6EFFE4F120AE6C420052191A /* Presentation */,
+				E986D4DF20A67C4400D7FBEB /* Presentation Model */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6E3C2DED20BA29AF0079A38D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6E3C2DEE20BA29C90079A38D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E986D4E920A67C7300D7FBEB /* Presentation */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		6E42E4E920AD0F23002B9650 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +232,9 @@
 		E986D4DE20A67C4400D7FBEB /* RecordDream */ = {
 			isa = PBXGroup;
 			children = (
+				6E3C2DED20BA29AF0079A38D /* Domain */,
+				6E3C2DEC20BA29A80079A38D /* Application */,
 				6EFFE4E720AE41A40052191A /* Actions */,
-				E986D4DF20A67C4400D7FBEB /* Presentation Model */,
-				6EFFE4F120AE6C420052191A /* Presentation */,
 			);
 			path = RecordDream;
 			sourceTree = "<group>";
@@ -218,7 +250,7 @@
 		E986D4E820A67C7300D7FBEB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E986D4E920A67C7300D7FBEB /* Presentation */,
+				6E3C2DEE20BA29C90079A38D /* Application */,
 			);
 			path = Common;
 			sourceTree = "<group>";
