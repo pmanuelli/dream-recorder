@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3C2DF020BA2AD50079A38D /* DefaultAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C2DEF20BA2AD50079A38D /* DefaultAudioRecorder.swift */; };
 		6E42E4F020AD1FF7002B9650 /* UIView+TransformAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4EF20AD1FF7002B9650 /* UIView+TransformAnimation.swift */; };
 		6E42E4F320AD2123002B9650 /* CGAffineTransform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4F220AD2123002B9650 /* CGAffineTransform+Extensions.swift */; };
 		6E42E4F520AD23B9002B9650 /* RecordDreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */; };
+		6EB8F71120BB32C40031E07A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8F71020BB32690031E07A /* AudioRecorder.swift */; };
 		6EC324B720ABC9E300780B8B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC324B620ABC9E300780B8B /* UIView+Extensions.swift */; };
 		6EC324B920ABD25200780B8B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC324B820ABD25200780B8B /* UIView+Shadow.swift */; };
 		6EC324BB20ABD27F00780B8B /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC324BA20ABD27F00780B8B /* UIView+CornerRadius.swift */; };
@@ -48,10 +50,12 @@
 
 /* Begin PBXFileReference section */
 		0CCB9D8610DBA505AB6C3F98 /* Pods-DreamRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamRecorderTests/Pods-DreamRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3C2DEF20BA2AD50079A38D /* DefaultAudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAudioRecorder.swift; sourceTree = "<group>"; };
 		6E42E4E820AD0CFD002B9650 /* BlaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlaView.xib; sourceTree = "<group>"; };
 		6E42E4EF20AD1FF7002B9650 /* UIView+TransformAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TransformAnimation.swift"; sourceTree = "<group>"; };
 		6E42E4F220AD2123002B9650 /* CGAffineTransform+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Extensions.swift"; sourceTree = "<group>"; };
 		6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDreamViewModel.swift; sourceTree = "<group>"; };
+		6EB8F71020BB32690031E07A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		6EC324B620ABC9E300780B8B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		6EC324B820ABD25200780B8B /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		6EC324BA20ABD27F00780B8B /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		6E3C2DEB20BA29660079A38D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6E3C2DEF20BA2AD50079A38D /* DefaultAudioRecorder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				6E3C2DEB20BA29660079A38D /* Services */,
-				6EFFE4F120AE6C420052191A /* Presentation */,
 				E986D4DF20A67C4400D7FBEB /* Presentation Model */,
+				6EFFE4F120AE6C420052191A /* Presentation */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 		6E3C2DED20BA29AF0079A38D /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6EB8F70F20BB325E0031E07A /* Services */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -152,6 +158,22 @@
 				6EFFE4F220AE7E420052191A /* TouchUpInsideAnimator.swift */,
 			);
 			path = Animators;
+			sourceTree = "<group>";
+		};
+		6EB8F70E20BB322C0031E07A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0996B20B093D400D39F99 /* Presentation Model */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6EB8F70F20BB325E0031E07A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6EB8F71020BB32690031E07A /* AudioRecorder.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6EC324B320ABC8BD00780B8B /* Custom Views */ = {
@@ -232,9 +254,9 @@
 		E986D4DE20A67C4400D7FBEB /* RecordDream */ = {
 			isa = PBXGroup;
 			children = (
+				6EFFE4E720AE41A40052191A /* Actions */,
 				6E3C2DED20BA29AF0079A38D /* Domain */,
 				6E3C2DEC20BA29A80079A38D /* Application */,
-				6EFFE4E720AE41A40052191A /* Actions */,
 			);
 			path = RecordDream;
 			sourceTree = "<group>";
@@ -294,7 +316,7 @@
 		E9A0996A20B093CD00D39F99 /* RecordDream */ = {
 			isa = PBXGroup;
 			children = (
-				E9A0996B20B093D400D39F99 /* Presentation Model */,
+				6EB8F70E20BB322C0031E07A /* Application */,
 			);
 			path = RecordDream;
 			sourceTree = "<group>";
@@ -540,6 +562,8 @@
 				6E42E4F020AD1FF7002B9650 /* UIView+TransformAnimation.swift in Sources */,
 				E9A0996F20B0AC3000D39F99 /* UIButton+Extensions.swift in Sources */,
 				E9A3859320A77C43001F2446 /* DesignableView.swift in Sources */,
+				6E3C2DF020BA2AD50079A38D /* DefaultAudioRecorder.swift in Sources */,
+				6EB8F71120BB32C40031E07A /* AudioRecorder.swift in Sources */,
 				6EC324BB20ABD27F00780B8B /* UIView+CornerRadius.swift in Sources */,
 				6EC324BD20ABD3A200780B8B /* GradientButton.swift in Sources */,
 				E986D4E520A67C4400D7FBEB /* RecordDreamView.swift in Sources */,
