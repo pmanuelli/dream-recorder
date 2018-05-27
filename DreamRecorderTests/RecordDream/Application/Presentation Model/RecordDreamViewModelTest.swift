@@ -97,10 +97,10 @@ private class SpyStartRecording: StartRecording {
     
     var executeCalls = 0
     
-    override func execute() {
+    override func execute(audioRecorder: AudioRecorder) {
         executeCalls += 1
         
-        super.execute()
+        super.execute(audioRecorder: audioRecorder)
     }
 }
 

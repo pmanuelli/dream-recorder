@@ -1,7 +1,9 @@
 
 class StartRecording {
 
-    func execute() {
+    
+    func execute(audioRecorder: AudioRecorder) {
         
+        audioRecorder.startRecording()
     }
 }
