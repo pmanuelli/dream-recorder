@@ -6,6 +6,8 @@ import RxSwift
 
 class RecordDreamViewModelTest: XCTestCase {
     
+    private let audioRecorder = DummyAudioRecorder()
+    
     func testWhenViewModelIsCreatedThenContinueButtonIsDisabled() {
         
         let viewModel = givenAViewModel()
@@ -22,10 +24,9 @@ class RecordDreamViewModelTest: XCTestCase {
         assertContinueButtonIsDisabled(viewModel)
     }
     
-    
     func testWhenRecordButtonIsTouchedOnceThenStartRecordingActionIsExecuted() {
         
-        let startRecording = SpyStartRecording()
+        let startRecording = SpyStartRecording(audioRecorder: audioRecorder)
         let viewModel = givenAViewModel(startRecordingAction: startRecording)
         
         whenRecordButtonIsTouched(viewModel: viewModel)
@@ -53,7 +54,7 @@ class RecordDreamViewModelTest: XCTestCase {
     }
     
     private func givenAViewModel() -> RecordDreamViewModel {
-        return RecordDreamViewModel(startRecordingAction: StartRecording(),
+        return RecordDreamViewModel(startRecordingAction: StartRecording(audioRecorder: audioRecorder),
                                     stopRecordingAction: StopRecording())
     }
     
@@ -63,7 +64,7 @@ class RecordDreamViewModelTest: XCTestCase {
     }
     
     private func givenAViewModel(stopRecordingAction: StopRecording) -> RecordDreamViewModel {
-        return RecordDreamViewModel(startRecordingAction: StartRecording(),
+        return RecordDreamViewModel(startRecordingAction: StartRecording(audioRecorder: audioRecorder),
                                     stopRecordingAction: stopRecordingAction)
     }
     
@@ -97,10 +98,10 @@ private class SpyStartRecording: StartRecording {
     
     var executeCalls = 0
     
-    override func execute(audioRecorder: AudioRecorder) {
+    override func execute() {
         executeCalls += 1
         
-        super.execute(audioRecorder: audioRecorder)
+        super.execute()
     }
 }
 
@@ -113,4 +114,11 @@ private class SpyStopRecording: StopRecording {
         
         super.execute()
     }
+}
+
+private class DummyAudioRecorder: AudioRecorder {
+    
+    func startRecording() { }
+    
+    func stopRecording() { }
 }

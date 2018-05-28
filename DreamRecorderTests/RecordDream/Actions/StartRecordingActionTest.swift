@@ -8,9 +8,9 @@ class StartRecordingActionTest: XCTestCase {
     func testWhenActionIsExecutedThenStartRecordingIsCalled() {
         
         let audioRecorder = givenAnAudioRecorder()
-        let action = givenAnAction()
+        let action = givenAnAction(audioRecorder: audioRecorder)
         
-        whenActionIsExecuted(action: action, audioRecorder: audioRecorder)
+        whenActionIsExecuted(action: action)
         
         assertStartRecordingIsCalledOnce(audioRecorder)
     }
@@ -19,12 +19,12 @@ class StartRecordingActionTest: XCTestCase {
         return SpyAudioRecorder()
     }
     
-    private func givenAnAction() -> StartRecording {
-        return StartRecording()
+    private func givenAnAction(audioRecorder: AudioRecorder) -> StartRecording {
+        return StartRecording(audioRecorder: audioRecorder)
     }
     
-    private func whenActionIsExecuted(action: StartRecording, audioRecorder: AudioRecorder) {
-        action.execute(audioRecorder: audioRecorder)
+    private func whenActionIsExecuted(action: StartRecording) {
+        action.execute()
     }
     
     private func assertStartRecordingIsCalledOnce(_ audioRecorder: SpyAudioRecorder) {

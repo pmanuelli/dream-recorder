@@ -52,8 +52,7 @@ class RecordDreamViewModel {
         continueButtonEnabled.value = false
         recordButtonTitle.value = "Stop"
         
-        let audioRecorder = DefaultAudioRecorder()
-        startRecordingAction.execute(audioRecorder: audioRecorder)
+        startRecordingAction.execute()
     }
     
     private func stopRecording() {

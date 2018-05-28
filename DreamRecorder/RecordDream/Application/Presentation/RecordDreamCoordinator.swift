@@ -22,7 +22,8 @@ class RecordDreamCoordinator: BaseCoordinator<Void> {
     
     private func createViewModel() -> RecordDreamViewModel {
         
-        let startRecording = StartRecording()
+        let audioRecorder = DefaultAudioRecorder()
+        let startRecording = StartRecording(audioRecorder: audioRecorder)
         let stopRecording = StopRecording()
         
         return RecordDreamViewModel(startRecordingAction: startRecording,
