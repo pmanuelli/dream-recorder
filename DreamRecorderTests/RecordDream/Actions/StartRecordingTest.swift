@@ -3,7 +3,7 @@
 
 import XCTest
 
-class StartRecordingActionTest: XCTestCase {
+class StartRecordingTest: XCTestCase {
     
     func testWhenActionIsExecutedThenStartRecordingIsCalled() {
         

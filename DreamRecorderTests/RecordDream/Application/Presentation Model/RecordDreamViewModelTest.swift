@@ -6,8 +6,6 @@ import RxSwift
 
 class RecordDreamViewModelTest: XCTestCase {
     
-    private let audioRecorder = DummyAudioRecorder()
-    
     func testWhenViewModelIsCreatedThenContinueButtonIsDisabled() {
         
         let viewModel = givenAViewModel()
@@ -26,7 +24,7 @@ class RecordDreamViewModelTest: XCTestCase {
     
     func testWhenRecordButtonIsTouchedOnceThenStartRecordingActionIsExecuted() {
         
-        let startRecording = SpyStartRecording(audioRecorder: audioRecorder)
+        let startRecording = givenAStartRecordingAction()
         let viewModel = givenAViewModel(startRecordingAction: startRecording)
         
         whenRecordButtonIsTouched(viewModel: viewModel)
@@ -53,8 +51,12 @@ class RecordDreamViewModelTest: XCTestCase {
         assertActionIsExecutedOnce(stopRecording)
     }
     
+    private func givenAStartRecordingAction() -> SpyStartRecording {
+        return SpyStartRecording(audioRecorder: DummyAudioRecorder())
+    }
+    
     private func givenAViewModel() -> RecordDreamViewModel {
-        return RecordDreamViewModel(startRecordingAction: StartRecording(audioRecorder: audioRecorder),
+        return RecordDreamViewModel(startRecordingAction: givenAStartRecordingAction(),
                                     stopRecordingAction: StopRecording())
     }
     
@@ -64,7 +66,7 @@ class RecordDreamViewModelTest: XCTestCase {
     }
     
     private func givenAViewModel(stopRecordingAction: StopRecording) -> RecordDreamViewModel {
-        return RecordDreamViewModel(startRecordingAction: StartRecording(audioRecorder: audioRecorder),
+        return RecordDreamViewModel(startRecordingAction: givenAStartRecordingAction(),
                                     stopRecordingAction: stopRecordingAction)
     }
     
