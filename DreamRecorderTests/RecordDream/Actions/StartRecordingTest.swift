@@ -42,7 +42,13 @@ private class SpyAudioRecorder: AudioRecorder {
     
     var stopRecordingCalls = 0
     
-    func stopRecording() {
+    func stopRecording() -> AudioRecord {
         stopRecordingCalls += 1
+        
+        return DummyAudioRecord()
     }
+}
+
+private class DummyAudioRecord: AudioRecord {
+    
 }

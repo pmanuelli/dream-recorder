@@ -43,7 +43,7 @@ class RecordDreamViewModelTest: XCTestCase {
     
     func testWhenRecordButtonIsTouchedTwiceThenStopRecordingActionIsExecuted() {
         
-        let stopRecording = SpyStopRecording()
+        let stopRecording = givenAStopRecordingAction()
         let viewModel = givenAViewModel(stopRecordingAction: stopRecording)
         
         whenRecordButtonIsTouchedTwice(viewModel: viewModel)
@@ -55,14 +55,18 @@ class RecordDreamViewModelTest: XCTestCase {
         return SpyStartRecording(audioRecorder: DummyAudioRecorder())
     }
     
+    private func givenAStopRecordingAction() -> SpyStopRecording {
+        return SpyStopRecording(audioRecorder: DummyAudioRecorder())
+    }
+    
     private func givenAViewModel() -> RecordDreamViewModel {
         return RecordDreamViewModel(startRecordingAction: givenAStartRecordingAction(),
-                                    stopRecordingAction: StopRecording())
+                                    stopRecordingAction: givenAStopRecordingAction())
     }
     
     private func givenAViewModel(startRecordingAction: StartRecording) -> RecordDreamViewModel {
         return RecordDreamViewModel(startRecordingAction: startRecordingAction,
-                                    stopRecordingAction: StopRecording())
+                                    stopRecordingAction: givenAStopRecordingAction())
     }
     
     private func givenAViewModel(stopRecordingAction: StopRecording) -> RecordDreamViewModel {
@@ -111,10 +115,10 @@ private class SpyStopRecording: StopRecording {
     
     var executeCalls = 0
     
-    override func execute() {
+    override func execute() -> AudioRecord {
         executeCalls += 1
         
-        super.execute()
+        return super.execute()
     }
 }
 
@@ -122,5 +126,11 @@ private class DummyAudioRecorder: AudioRecorder {
     
     func startRecording() { }
     
-    func stopRecording() { }
+    func stopRecording() -> AudioRecord {
+        return DummyAudioRecord()
+    }
+}
+
+private class DummyAudioRecord: AudioRecord {
+    
 }

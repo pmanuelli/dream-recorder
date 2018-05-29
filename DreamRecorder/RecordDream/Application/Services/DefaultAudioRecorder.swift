@@ -5,7 +5,7 @@ class DefaultAudioRecorder: AudioRecorder {
         
     }
     
-    func stopRecording() {
-        
+    func stopRecording() -> AudioRecord {
+        return DefaultAudioRecord()
     }
 }

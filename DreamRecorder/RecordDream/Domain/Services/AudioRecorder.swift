@@ -2,5 +2,5 @@
 protocol AudioRecorder {
 
     func startRecording()
-    func stopRecording()
+    func stopRecording() -> AudioRecord
 }
