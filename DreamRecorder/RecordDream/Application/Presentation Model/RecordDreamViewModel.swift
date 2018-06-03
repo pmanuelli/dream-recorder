@@ -4,34 +4,50 @@ import RxSwift
 class RecordDreamViewModel {
 
     let recordButtonTitle = Variable<String>("Record")
+    let recordButtonTouch: AnyObserver<Void>
 
     let continueButtonEnabled = Variable<Bool>(false)
     let continueButtonTitle = "Continue"
-
-    let recordButtonTouchSubject = PublishSubject<Void>()
-    var recordButtonTouch: AnyObserver<Void>
+    let continueButtonTouch: AnyObserver<Void>
     
-    private var startRecordingAction: StartRecording
-    private var stopRecordingAction: StopRecording
+    let audioRecordAvailable: Observable<AudioRecord>
 
-    private var isRecording = false
+    private let recordButtonTouchSubject = PublishSubject<Void>()
+    private let continueButtonTouchSubject = PublishSubject<Void>()
+    private let audioRecordAvailableSubject = PublishSubject<AudioRecord>()
     
     private let disposeBag = DisposeBag()
+    
+    private let startRecordingAction: StartRecording
+    private let stopRecordingAction: StopRecording
 
+    private var isRecording = false
+    private var currentAudioRecord: AudioRecord?
+    
     init(startRecordingAction: StartRecording, stopRecordingAction: StopRecording) {
         
         self.startRecordingAction = startRecordingAction
         self.stopRecordingAction = stopRecordingAction
         
         self.recordButtonTouch = recordButtonTouchSubject.asObserver()
+        self.continueButtonTouch = continueButtonTouchSubject.asObserver()
+        self.audioRecordAvailable = audioRecordAvailableSubject
         
-        observeRecordButtonTouchObserver()
+        observeRecordButtonTouchSubject()
+        observeContinueButtonTouchSubject()
     }
     
-    private func observeRecordButtonTouchObserver() {
+    private func observeRecordButtonTouchSubject() {
         
         recordButtonTouchSubject
             .subscribe(onNext: { [weak self] in self?.recordButtonTouched() })
+            .disposed(by: disposeBag)
+    }
+    
+    private func observeContinueButtonTouchSubject() {
+        
+        continueButtonTouchSubject
+            .subscribe(onNext: { [weak self] in self?.continueButtonTouched() })
             .disposed(by: disposeBag)
     }
     
@@ -58,6 +74,14 @@ class RecordDreamViewModel {
         continueButtonEnabled.value = true
         recordButtonTitle.value = "New Record"
         
-        stopRecordingAction.execute()
+        currentAudioRecord = stopRecordingAction.execute()
+    }
+    
+    private func continueButtonTouched() {
+        guard let currentAudioRecord = currentAudioRecord else {
+            return
+        }
+        
+        audioRecordAvailableSubject.onNext(currentAudioRecord)
     }
 }

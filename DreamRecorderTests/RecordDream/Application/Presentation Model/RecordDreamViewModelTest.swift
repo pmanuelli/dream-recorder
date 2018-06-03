@@ -3,6 +3,7 @@
 
 import XCTest
 import RxSwift
+import RxTest
 
 class RecordDreamViewModelTest: XCTestCase {
     
@@ -51,6 +52,17 @@ class RecordDreamViewModelTest: XCTestCase {
         assertActionIsExecutedOnce(stopRecording)
     }
     
+    func testWhenContinueButtonIsTouchedThenAudioRecordIsAvailable() {
+        
+        let viewModel = givenAViewModel()
+        let testObserver = givenAnAudioRecordAvailableObserver(viewModel: viewModel)
+        
+        whenRecordButtonIsTouchedTwice(viewModel: viewModel)
+        whenContinueButtonIsTouched(viewModel: viewModel)
+        
+        assertAudioRecordIsAvailable(testObserver)
+    }
+    
     private func givenAStartRecordingAction() -> SpyStartRecording {
         return SpyStartRecording(audioRecorder: DummyAudioRecorder())
     }
@@ -74,6 +86,14 @@ class RecordDreamViewModelTest: XCTestCase {
                                     stopRecordingAction: stopRecordingAction)
     }
     
+    private func givenAnAudioRecordAvailableObserver(viewModel: RecordDreamViewModel) -> TestableObserver<AudioRecord> {
+        
+        let testObserver = TestScheduler(initialClock: 0).createObserver(AudioRecord.self)
+        _ = viewModel.audioRecordAvailable.subscribe(testObserver)
+        
+        return testObserver
+    }
+    
     private func whenRecordButtonIsTouched(viewModel: RecordDreamViewModel) {
         viewModel.recordButtonTouch.onNext(())
     }
@@ -81,6 +101,10 @@ class RecordDreamViewModelTest: XCTestCase {
     private func whenRecordButtonIsTouchedTwice(viewModel: RecordDreamViewModel) {
         whenRecordButtonIsTouched(viewModel: viewModel)
         whenRecordButtonIsTouched(viewModel: viewModel)
+    }
+    
+    private func whenContinueButtonIsTouched(viewModel: RecordDreamViewModel) {
+        viewModel.continueButtonTouch.onNext(())
     }
     
     private func assertContinueButtonIsEnabled(_ viewModel: RecordDreamViewModel) {
@@ -97,6 +121,11 @@ class RecordDreamViewModelTest: XCTestCase {
     
     private func assertActionIsExecutedOnce(_ action: SpyStopRecording) {
         XCTAssertEqual(action.executeCalls, 1)
+    }
+    
+    private func assertAudioRecordIsAvailable(_ observer: TestableObserver<AudioRecord>) {
+        let elementsReceived = observer.events.compactMap { $0.value.element }
+        XCTAssertEqual(elementsReceived.count, 1)
     }
 }
 

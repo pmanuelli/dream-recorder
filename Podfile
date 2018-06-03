@@ -17,4 +17,5 @@ end
 
 target 'DreamRecorderTests' do
     common_pods
+    pod 'RxTest', '~> 4.0'
 end
