@@ -12,15 +12,21 @@ class RecordDreamCoordinator: BaseCoordinator<Void> {
 
     override func start() -> Observable<Void> {
     
-        let viewModel = createViewModel()
-        let controller = createViewController(viewModel: viewModel)
-        
-        navigationController.pushViewController(controller, animated: true)
-        
+        pushRecordDreamViewController()
+
         return Observable.never()
     }
     
-    private func createViewModel() -> RecordDreamViewModel {
+    private func pushRecordDreamViewController() {
+        
+        let viewModel = createRecordDreamViewModel()
+        subscribe(to: viewModel)
+        
+        let controller = createRecordDreamViewController(viewModel: viewModel)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    private func createRecordDreamViewModel() -> RecordDreamViewModel {
         
         let audioRecorder = DefaultAudioRecorder()
         let startRecording = StartRecording(audioRecorder: audioRecorder)
@@ -30,7 +36,24 @@ class RecordDreamCoordinator: BaseCoordinator<Void> {
                                     stopRecordingAction: stopRecording)
     }
     
-    private func createViewController(viewModel: RecordDreamViewModel) -> UIViewController {
+    private func subscribe(to viewModel: RecordDreamViewModel) {
+        
+        viewModel.audioRecordAvailable
+            .subscribe(onNext: { [weak self] audioRecord in self?.pushSaveRecordedDreamViewController(recordedDream: audioRecord) })
+            .disposed(by: disposeBag)
+    }
+    
+    private func createRecordDreamViewController(viewModel: RecordDreamViewModel) -> UIViewController {
         return RecordDreamViewController(viewModel: viewModel)
+    }
+    
+    private func pushSaveRecordedDreamViewController(recordedDream: AudioRecord) {
+        
+        let controller = createSaveRecordedDreamViewController(recordedDream: recordedDream)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    private func createSaveRecordedDreamViewController(recordedDream: AudioRecord) -> SaveRecordedDreamViewController {
+        return SaveRecordedDreamViewController(nibName: .none, bundle: .none)
     }
 }

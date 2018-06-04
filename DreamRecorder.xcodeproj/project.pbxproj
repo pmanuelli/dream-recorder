@@ -11,6 +11,9 @@
 		6E42E4F020AD1FF7002B9650 /* UIView+TransformAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4EF20AD1FF7002B9650 /* UIView+TransformAnimation.swift */; };
 		6E42E4F320AD2123002B9650 /* CGAffineTransform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4F220AD2123002B9650 /* CGAffineTransform+Extensions.swift */; };
 		6E42E4F520AD23B9002B9650 /* RecordDreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */; };
+		6E7A6E7920C4B0FF002F2068 /* SaveRecordedDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A6E7820C4B0FF002F2068 /* SaveRecordedDreamViewController.swift */; };
+		6E7A6E7B20C4B11A002F2068 /* SaveRecordedDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A6E7A20C4B11A002F2068 /* SaveRecordedDreamView.swift */; };
+		6E7A6E7D20C4B130002F2068 /* SaveRecordedDreamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7A6E7C20C4B130002F2068 /* SaveRecordedDreamView.xib */; };
 		6EB8F71120BB32C40031E07A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8F71020BB32690031E07A /* AudioRecorder.swift */; };
 		6EB8F71420BB34100031E07A /* StartRecordingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8F71320BB34100031E07A /* StartRecordingTest.swift */; };
 		6EC324B720ABC9E300780B8B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC324B620ABC9E300780B8B /* UIView+Extensions.swift */; };
@@ -59,6 +62,9 @@
 		6E42E4EF20AD1FF7002B9650 /* UIView+TransformAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TransformAnimation.swift"; sourceTree = "<group>"; };
 		6E42E4F220AD2123002B9650 /* CGAffineTransform+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Extensions.swift"; sourceTree = "<group>"; };
 		6E42E4F420AD23B9002B9650 /* RecordDreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDreamViewModel.swift; sourceTree = "<group>"; };
+		6E7A6E7820C4B0FF002F2068 /* SaveRecordedDreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecordedDreamViewController.swift; sourceTree = "<group>"; };
+		6E7A6E7A20C4B11A002F2068 /* SaveRecordedDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecordedDreamView.swift; sourceTree = "<group>"; };
+		6E7A6E7C20C4B130002F2068 /* SaveRecordedDreamView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveRecordedDreamView.xib; sourceTree = "<group>"; };
 		6EB8F71020BB32690031E07A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		6EB8F71320BB34100031E07A /* StartRecordingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecordingTest.swift; sourceTree = "<group>"; };
 		6EC324B620ABC9E300780B8B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -170,6 +176,26 @@
 			path = Animators;
 			sourceTree = "<group>";
 		};
+		6E7A6E7620C497C6002F2068 /* RecordDream */ = {
+			isa = PBXGroup;
+			children = (
+				E986D4E320A67C4400D7FBEB /* RecordDreamViewController.swift */,
+				E986D4E120A67C4400D7FBEB /* RecordDreamView.swift */,
+				E986D4E220A67C4400D7FBEB /* RecordDreamView.xib */,
+			);
+			path = RecordDream;
+			sourceTree = "<group>";
+		};
+		6E7A6E7720C497F5002F2068 /* SaveRecordedDream */ = {
+			isa = PBXGroup;
+			children = (
+				6E7A6E7820C4B0FF002F2068 /* SaveRecordedDreamViewController.swift */,
+				6E7A6E7A20C4B11A002F2068 /* SaveRecordedDreamView.swift */,
+				6E7A6E7C20C4B130002F2068 /* SaveRecordedDreamView.xib */,
+			);
+			path = SaveRecordedDream;
+			sourceTree = "<group>";
+		};
 		6EB8F70E20BB322C0031E07A /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,9 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				E986D4E020A67C4400D7FBEB /* RecordDreamCoordinator.swift */,
-				E986D4E320A67C4400D7FBEB /* RecordDreamViewController.swift */,
-				E986D4E120A67C4400D7FBEB /* RecordDreamView.swift */,
-				E986D4E220A67C4400D7FBEB /* RecordDreamView.xib */,
+				6E7A6E7620C497C6002F2068 /* RecordDream */,
+				6E7A6E7720C497F5002F2068 /* SaveRecordedDream */,
 				6E42E4E920AD0F23002B9650 /* Animators */,
 			);
 			path = Presentation;
@@ -447,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E986D4D720A67BEE00D7FBEB /* LaunchScreen.storyboard in Resources */,
+				6E7A6E7D20C4B130002F2068 /* SaveRecordedDreamView.xib in Resources */,
 				E986D4D420A67BEE00D7FBEB /* Assets.xcassets in Resources */,
 				E986D4E620A67C4400D7FBEB /* RecordDreamView.xib in Resources */,
 			);
@@ -577,7 +603,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7A6E7920C4B0FF002F2068 /* SaveRecordedDreamViewController.swift in Sources */,
 				E986D4F020A67C7300D7FBEB /* UIView+LoadableFromNib.swift in Sources */,
+				6E7A6E7B20C4B11A002F2068 /* SaveRecordedDreamView.swift in Sources */,
 				6ECBA33D20BCFA5D007A92D9 /* DefaultAudioRecord.swift in Sources */,
 				6E42E4F320AD2123002B9650 /* CGAffineTransform+Extensions.swift in Sources */,
 				E986D4EE20A67C7300D7FBEB /* BaseCoordinator.swift in Sources */,

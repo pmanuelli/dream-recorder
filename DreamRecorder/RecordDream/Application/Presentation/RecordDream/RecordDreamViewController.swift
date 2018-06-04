@@ -48,5 +48,9 @@ class RecordDreamViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.continueButton.setTitle(viewModel.continueButtonTitle)
+        
+        mainView.continueButton.rx.tap
+            .bind(to: viewModel.continueButtonTouch)
+            .disposed(by: disposeBag)
     }
 }
